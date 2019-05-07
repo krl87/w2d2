@@ -10,7 +10,17 @@ app.set('view engine', 'ejs');
 
 //index page
 app.get('/', function(req, res) {
-  res.render('pages/index');
+  var drinks = [
+    { name: 'Bloody Mary', drunknes: 3 },
+    { name: 'Martini', drunknes: 5 },
+    { name: 'Scotch', drunknes: 10 },
+  ];
+  var tagline = "Any code of your own that you havent looked at for six or more months might as well have been written by someone else";
+
+  res.render('pages/index', {
+    drinks: drinks,
+    tagline: tagline
+  });
 });
 
 //about page
